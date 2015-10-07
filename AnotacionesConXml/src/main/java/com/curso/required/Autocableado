@@ -1,0 +1,5 @@
+Las anotaciones @Autowired y @Resource a nivel de atributo no funcionan bien en conjunción
+con @Required.
+Si se ponen a nivel de método, en el mismo lugar donde colocamos el @Required, parecen funcionar
+correctamente.
+Sugerencia: comprobar con versiones de Spring anteriores a la 4.2.1.RELEASE, rama 3.x o anterior
