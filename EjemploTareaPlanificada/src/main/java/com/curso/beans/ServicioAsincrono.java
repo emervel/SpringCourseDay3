@@ -31,13 +31,15 @@ public class ServicioAsincrono {
     //El objeto Future tb tiene el metodo get() que si no ha acabado parará el hilo principal hasta que finalice el metodo asincrono
     @Async
     public Future<Double> factorial(Integer numero) {
-        System.out.println("En factorial de " + getClass().getName() + " en el hilo " + Thread.currentThread());
+        System.out.println("En metodo factorial de " + getClass().getName() + " en el hilo " + Thread.currentThread());
         return new AsyncResult<>(factorialUtil(numero));
     }
 
+    //Un objeto de este estilo avisa cuando acaba, no somos nosotros los que consultamos
+    //Tendremos dos manejadores de eventos, uno para escuchar cuando ha acabado con exito y otro para cuando no acabe con exito 
     @Async
     public ListenableFuture<Double> factorialLf(Integer numero) {
-        System.out.println("En factorial de " + getClass().getName() + " en el hilo " + Thread.currentThread());
+        System.out.println("En metodo factorialLf de " + getClass().getName() + " en el hilo " + Thread.currentThread());
         return new AsyncResult<>(factorialUtil(numero));
     }
 
